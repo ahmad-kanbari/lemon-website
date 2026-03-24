@@ -1,6 +1,4 @@
-import { fetchAPI, submitAPI, updateTimes } from './App';
-
-// ── fetchAPI ──────────────────────────────────────────────────────────────────
+import { fetchAPI, submitAPI, updateTimes } from './api';
 
 describe('fetchAPI', () => {
   test('returns a non-empty array for a valid date', () => {
@@ -10,29 +8,22 @@ describe('fetchAPI', () => {
   });
 
   test('returns strings in HH:MM format', () => {
-    const times = fetchAPI('2025-06-15');
-    times.forEach((t) => {
+    fetchAPI('2025-06-15').forEach((t) => {
       expect(t).toMatch(/^\d{2}:\d{2}$/);
     });
   });
 
   test('returns a subset of the known time slots', () => {
     const all = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-    const times = fetchAPI('2025-06-15');
-    times.forEach((t) => expect(all).toContain(t));
+    fetchAPI('2025-06-15').forEach((t) => expect(all).toContain(t));
   });
 });
-
-// ── submitAPI ─────────────────────────────────────────────────────────────────
 
 describe('submitAPI', () => {
   test('returns a boolean', () => {
-    const result = submitAPI({ date: '2025-06-15', time: '19:00', guests: 2 });
-    expect(typeof result).toBe('boolean');
+    expect(typeof submitAPI({ date: '2025-06-15', guests: 2 })).toBe('boolean');
   });
 });
-
-// ── updateTimes reducer ───────────────────────────────────────────────────────
 
 describe('updateTimes', () => {
   test('UPDATE_TIMES returns times for the given date', () => {
@@ -49,7 +40,6 @@ describe('updateTimes', () => {
 
   test('unknown action returns state unchanged', () => {
     const state = ['18:00', '20:00'];
-    const result = updateTimes(state, { type: 'UNKNOWN' });
-    expect(result).toBe(state);
+    expect(updateTimes(state, { type: 'UNKNOWN' })).toBe(state);
   });
 });
