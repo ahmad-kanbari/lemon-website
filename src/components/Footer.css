@@ -1,0 +1,70 @@
+.footer {
+  background: var(--green);
+  color: var(--white);
+  padding: 48px 0 0;
+  margin-top: auto;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  padding-bottom: 40px;
+}
+
+.footer__logo {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  font-family: 'Markazi Text', Georgia, serif;
+}
+
+.footer__brand p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.footer__heading {
+  font-size: 1.1rem;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--yellow);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.footer nav ul,
+.footer__contact ul,
+.footer section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.footer a {
+  color: var(--white);
+  transition: color .2s;
+}
+.footer a:hover {
+  color: var(--yellow);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.2);
+  text-align: center;
+  padding: 16px 20px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+address { font-style: normal; }
+
+@media (max-width: 600px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

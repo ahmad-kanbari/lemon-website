@@ -1,0 +1,110 @@
+.header {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-lemon { font-size: 2rem; }
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-name {
+  font-family: 'Markazi Text', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.logo-place {
+  font-size: 0.75rem;
+  color: var(--grey);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Desktop nav */
+.header__nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+.header__nav a {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--dark);
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s, color .2s;
+}
+.header__nav a:hover,
+.header__nav a.active {
+  color: var(--green);
+  border-bottom-color: var(--yellow);
+}
+
+/* Hamburger (hidden on desktop) */
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.header__hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--dark);
+  border-radius: 3px;
+  transition: transform .3s, opacity .3s;
+}
+.header__hamburger.open span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+.header__hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.header__hamburger.open span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header__hamburger { display: flex; }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 20px;
+  }
+  .header__nav--open { display: block; }
+  .header__nav ul {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

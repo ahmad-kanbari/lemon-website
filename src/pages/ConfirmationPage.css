@@ -1,0 +1,86 @@
+.confirmation-page {
+  padding: 60px 0;
+  background: var(--light-bg);
+  min-height: 60vh;
+}
+
+.confirmation-page__inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.confirmation-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.confirmation-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--green);
+  margin-bottom: 16px;
+}
+
+.confirmation-subtitle {
+  font-size: 1.05rem;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.confirmation-details {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 32px;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.confirmation-details h2 {
+  font-size: 1.3rem;
+  color: var(--green);
+  margin-bottom: 20px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+}
+
+.confirmation-details dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 12px 24px;
+}
+
+.confirmation-details dt {
+  font-weight: 700;
+  color: var(--grey);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.confirmation-details dd {
+  color: var(--dark);
+  font-size: 1rem;
+}
+
+.confirmation-note {
+  font-size: 0.9rem;
+  color: var(--grey);
+  margin-bottom: 32px;
+}
+.confirmation-note a {
+  color: var(--green);
+  font-weight: 600;
+}
+.confirmation-note a:hover {
+  text-decoration: underline;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
